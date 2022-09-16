@@ -1,4 +1,4 @@
-const axios = require('axios')
+// import axios from 'axios';
 
 //Guardo las noticias de la api en la constante
 const API = axios.get('https://newsapi.org/v2/everything?q=apple&techcrunch&the-wall-street-journal&apiKey=affcf3bba7364c178fa3532776ac1119')
