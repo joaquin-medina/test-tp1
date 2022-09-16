@@ -23,42 +23,42 @@ console.log(filename);
 
 const filterNews = (news = [], newsList, filename) => {
   newsList.innerHTML = news.map((news) => {
-    if (news.source.id === 'engadget' && filename === 'pag.html') { //Noticias Apple por ID
+    if (news.data.article.source.id === 'engadget' && filename === 'pag.html') { //Noticias Apple por ID
       console.log('entro');
       return `      
       <div class="news-card">
         <div id="news-info">
-          <h1>${news.title}</h1>
-          <h3>${news.author}</h3>
-          <p>${news.description}</p>
+          <h1>${news.data.article.title}</h1>
+          <h3>${news.data.article.author}</h3>
+          <p>${news.data.article.description}</p>
         </div>
         <div id="news-img">
-          <img src="${news.urlToImage}" alt="Imagen de la noticia"/> </div>
+          <img src="${news.data.article.urlToImage}" alt="Imagen de la noticia"/> </div>
         </div>
       </div>`
-    } else if (news.source.id === 'techcrunch' && filename === 'pag2.html') { //Noticias Techcrunch por ID
+    } else if (news.data.article.source.id === 'techcrunch' && filename === 'pag2.html') { //Noticias Techcrunch por ID
       console.log('entro');
       return `
       <div class="news-card">
         <div id="news-info">
-          <h1>${news.title}</h1>
-          <h3>${news.author}</h3>
-          <p>${news.description}</p>
+          <h1>${news.data.article.title}</h1>
+          <h3>${news.data.article.author}</h3>
+          <p>${news.data.article.description}</p>
         </div>
         <div id="news-img">
-          <img src="${news.urlToImage}" alt="Imagen de la noticia"/> </div>
+          <img src="${news.data.article.urlToImage}" alt="Imagen de la noticia"/> </div>
         </div>
       </div>`
-    } else if (news.source.id === 'the-wall-street-journal' && filename === 'pag3.html') { //Noticias Wall Street por ID
+    } else if (news.data.article.source.id === 'the-wall-street-journal' && filename === 'pag3.html') { //Noticias Wall Street por ID
       return `
       <div class="news-card">
         <div id="news-info">
-          <h1>${news.title}</h1>
-          <h3>${news.author}</h3>
-          <p>${news.description}</p>
+          <h1>${news.data.article.title}</h1>
+          <h3>${news.data.article.author}</h3>
+          <p>${news.data.article.description}</p>
         </div>
       <div id="news-img">
-        <img src="${news.urlToImage}" alt="Imagen de la noticia"/> </div>
+        <img src="${news.data.article.urlToImage}" alt="Imagen de la noticia"/> </div>
       </div>
     </div>`
     }
