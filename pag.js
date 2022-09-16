@@ -12,7 +12,7 @@ const appleNews = axios.get('https://newsapi.org/v2/everything?q=apple&from=2022
   });
 
 const allNews = appleNews || []; //Guardo en la constante news la llamada a axios
-const hola = document.querySelector('.news-container'); //Selecciono el contenedor de noticias
+const newList = document.querySelector('.news-container'); //Selecciono el contenedor de noticias
 
 function newsCont(news = [], newsList) {
   newsList.innerHTML = news
@@ -32,4 +32,4 @@ function newsCont(news = [], newsList) {
     .join("");
 }
 
-newsCont(allNews, hola)
+newsCont(allNews, newList)
