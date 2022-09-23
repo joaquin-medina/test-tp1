@@ -1,15 +1,21 @@
-const getNews =
-  axios
-    .get(
-      "https://newsapi.org/v2/everything?q=apple&techcrunch&the-wall-street-journal&apiKey=affcf3bba7364c178fa3532776ac1119"
-    )
-    .then((response) => {
-      console.log("funciona", response);
-    })
-    .catch((error) => {
-      console.log("no funciona", error);
-    })
-    .then(() => {}) || [];
+const getNews = async () => {
+  const response =
+    (await axios
+      .get(
+        "https://newsapi.org/v2/everything?q=apple&techcrunch&the-wall-street-journal&apiKey=affcf3bba7364c178fa3532776ac1119"
+      )
+      .then(() => {
+        console.log();
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+      .then(() => {})) || [];
+
+  const news = response.json();
+
+  return console.log(news);
+};
 
 //Guardo en la constante getNews todas las noticias de la API
 
@@ -77,4 +83,4 @@ function filterNews(news = [], newsList, filename) {
     .join("");
 }
 
-filterNews(getNews, newsContent, filename);
+filterNews(getNews(), newsContent, filename);
